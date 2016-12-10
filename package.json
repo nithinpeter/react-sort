@@ -8,7 +8,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "eslint ./src",
-    "validate": "npm test && npm run lint",
+    "validate": "npm test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

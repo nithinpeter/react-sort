@@ -1,0 +1,9 @@
+language: node_js
+node_js: 4
+branches:
+    only:
+        - master
+notifications:
+    email: false
+scripts:
+    - npm run validate
