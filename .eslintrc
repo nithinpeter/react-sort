@@ -5,8 +5,11 @@
         "ecmaFeatures": {
             "jsx": true
         }
-    },    
+    },
     "extends": [
         "eslint:recommended"
+    ],
+    "plugins": [
+        "react"
     ]
 }

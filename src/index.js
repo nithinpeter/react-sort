@@ -1,5 +1,17 @@
-const add = (a, b) => {
-    return a+b;
-};
+import React, { PropTypes } from 'react';
 
-export default add;
+
+const ReactSort = ({ dataSource, sortField, sortDir, children }) => {
+    return (<div>
+        { dataSource.map(item => children(item)) }
+    </div>)
+}
+
+ReactSort.propTypes = {
+    dataSource: PropTypes.array.isRequired,
+    sortField: PropTypes.string.isRequired,
+    sortDir: PropTypes.oneOf(['asc', 'des']).isRequired,
+}
+
+export default ReactSort;
+
