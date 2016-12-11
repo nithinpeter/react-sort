@@ -3,7 +3,7 @@ import * as ReactSortUtils from "../src/react-sort-utils";
 describe('Test sorting', () => {
     it('sorts ascending', () => {
         
-        const sortOptions = { sortField: "age", sortDir: "des" };
+        const sortOptions = { sortField: "age", sortDir: "asc" };
         const dataSource =  [{ name: "nithin", age: 12 }, { name: "peter", age: 43 } ];
 
         const result = ReactSortUtils.sortDataSource(

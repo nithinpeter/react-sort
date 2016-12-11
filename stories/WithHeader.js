@@ -1,37 +1,52 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactSort from '../src';
 
+export default class WithHeader extends Component {
 
-const WithHeader = () => (<ReactSort 
-                        dataSource={ [ { name: "messi", age: 2000}, { name: "nithin", age: 12 }, { name: "peter", age: 43 } ] }
-                        sortOptions={{ sortField: "age", sortDir: "des" }}
-                        renderHeader={renderHeader}
-                        > 
-                            {
-                                (props) => <div>{props.name}</div>
-                            }
-                        </ReactSort>);
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            dataSource: [{ name: "messi", age: 27 }, { name: "nithin", age: 12 }, { name: "peter", age: 43 }],
+            sortOptions: { sortField: "age", sortDir: "des" }
+        };
+    }
 
-const renderHeader = (ReactSortUtils, currentSortOptions, dataSource) => <div>
-    header
-    <button onClick={ () => ReactSortUtils.sortDataSource(_sortAscending(currentSortOptions), dataSource)}>
-        ASC
-    </button>
-    <button onClick={ () => ReactSortUtils.sortDataSource(_sortDescending(currentSortOptions), dataSource) }>
-        DES
-    </button>
-</div>
+    render() {
 
+        return (<ReactSort
+            dataSource={this.state.dataSource}
+            sortOptions={this.state.sortOptions}
+            renderHeader={this.renderHeader.bind(this)}
+            >
+            {
+                (props) => <div>{props.name}- {props.age}</div>
+            }
+        </ReactSort>);
+    }
 
-const _sortAscending = (currentSortOptions) => {
-    currentSortOptions.sortDir = "asc";
-    currentSortOptions;
+    renderHeader(utils, sortOptions, dataSource) {
+        return (<div>
+            Sory By - {sortOptions.sortField}
+            <br/>
+            <button onClick={this.sortAscending.bind(this)}>
+                ASC
+            </button>
+            <button onClick={this.sortDescending.bind(this)}>
+                DES
+            </button>
+        </div>);
+    }
+
+    sortAscending() {
+        const sortOptions = this.state.sortOptions;
+        sortOptions.sortDir = "asc";
+        this.setState({ sortOptions });
+    }
+
+    sortDescending() {
+        const sortOptions = this.state.sortOptions;
+        sortOptions.sortDir = "des";
+        this.setState({ sortOptions });
+    }
 }
-const _sortDescending = (currentSortOptions) => {
-    currentSortOptions.sortDir = "des";
-    currentSortOptions;
-}
-
-
-export default WithHeader;
