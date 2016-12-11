@@ -7,11 +7,11 @@ This ReactSort compoent will help you render react components in a sorted manner
 ### Installation
 
 ```
-npm install --save react-sort-compoent
+npm install --save react-sort-component
 
 or
 
-yarn add react-sort-compoent (If you are using Yarn)
+yarn add react-sort-component (If you are using Yarn)
 ```
 
 ### Usage
