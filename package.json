@@ -34,9 +34,6 @@
       "pre-commit": "npm test"
     }
   },
-  "files": [
-    "dist"
-  ],
   "peerDependencies": {
     "react-dom": "^15.4.1"
   },
