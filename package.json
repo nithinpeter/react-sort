@@ -2,7 +2,7 @@
   "name": "react-sort-component",
   "version": "1.1.1",
   "description": "",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "babel --copy-files --out-dir dist src",
     "test": "jest",
